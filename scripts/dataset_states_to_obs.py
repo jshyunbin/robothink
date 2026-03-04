@@ -56,14 +56,15 @@ import numpy as np
 from copy import deepcopy
 from tqdm import tqdm
 import sys
-
-sys.path.append('.')
+from pathlib import Path
+path_root = Path(__file__).parents[1]
+sys.path.append(str(path_root))
 
 from robosuite.utils.log_utils import ROBOSUITE_DEFAULT_LOGGER
 ROBOSUITE_DEFAULT_LOGGER.setLevel(logging.ERROR)
 
 
-import environments
+import envs
 import robomimic.utils.tensor_utils as TensorUtils
 import robomimic.utils.file_utils as FileUtils
 import robomimic.utils.env_utils as EnvUtils

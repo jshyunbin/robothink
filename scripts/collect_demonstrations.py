@@ -11,12 +11,13 @@ import os
 import time
 from glob import glob
 import sys
-
-sys.path.append('.')
+from pathlib import Path
+path_root = Path(__file__).parents[1]
+sys.path.append(str(path_root))
 
 import h5py
 import numpy as np
-import environments
+import envs
 
 import robosuite as suite
 from robosuite.controllers import load_composite_controller_config
